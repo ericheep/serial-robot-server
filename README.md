@@ -24,13 +24,14 @@ Then to send to a robot (addresses should be kept the same as the robot names):
 
 To add a new robot to the server:
 
-    public class NewRobot extends SerialBot {
+    public class NewBot extends SerialBot {
         // OldBot is 0
-        // NewRobot is 1
+        // NewBot is 1
 
         1 => int ID;
-        "/NewRobot" => string address;
-        if (IDCheck(ID, address == 1) {
-            spork ~ oscrec(ID, address);
+        "/NewBot" => string address;
+        IDCheck(ID, address) => int check;
+        if (check >= 1) {
+            spork ~ oscrec(check, address);
         }
     }
