@@ -7,7 +7,7 @@ public class Trimpbeat extends SerialBot {
     // Trimpbeat is 1
     // Trimpspin is 2
 
-    2 => int ID;
+    1 => int ID;
     "/Trimpbeat" => string address;
     IDCheck(ID, address) => int check;
     if (check >= 0) {
