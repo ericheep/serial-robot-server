@@ -6,9 +6,9 @@ Allows for serial communication to the mechatronic instruments (robots) in the M
 Each robot needs to have an **identical ID number** that is written into both the Arduino code and its child class code.
 
 Currenly supported robots with their ID number:
-- MDarimbot     0
-- Trimpbeat     1
-- Trimpspin     2
+    0 - MDarimbot
+    1 - Trimpbeat
+    2 - Trimpspin
 
 To connect using ChucK via OSC:
 
