@@ -37,6 +37,11 @@ Then to send to a robot using its OSC address, addresses should be kept the same
     oout.add(velocity)
     oout.send();
 
+To connect using MIDI, see the [midi-robot-client](https://github.com/MTIID/midi-robot-client) repo.
+
+adding robots
+-------------
+
 To add a new robot to the server, make a new ChucK class, be sure to include the ID of **every** robot inside the class so no confusion arises:
 
     public class NewBot extends SerialBot {
@@ -51,14 +56,17 @@ To add a new robot to the server, make a new ChucK class, be sure to include the
         }
     }
 
-To change the scale of a robot, make an integer array of the desired scale in the class, and call the function "rescale" using that array. This allows for MIDI notes to be interpreted correctly no matter the scale of a robot. 
+rescale
+-------
+
+To set the scale of a robot, make an integer array of the desired scale in the class, and call the function "rescale" using that array. This allows for MIDI notes to be interpreted correctly no matter the scale of a robot. 
 
     public class WholeToneBot extends SerialBot {
         // OldBot is 0
         // NewBot is 1
         // WholeToneBot is 2 
 
-        // create scale here, whole notes starting at C (MIDI scale)
+        // create MIDI scale here, whole notes starting at C
         [60, 62, 64, 66, 68, 70, 72] @=> int scale;
 
         // call rescale here
