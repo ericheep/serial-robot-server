@@ -13,7 +13,7 @@ Each robot needs to have an **identical ID number** that is written into both th
         "/OldBot" => string address;
         IDCheck(ID, address) => int check;
         if (check >= 0) {
-            spork ~ oscrec(check, address);
+            spork ~ oscrecv(check, address);
         }
     }
 
@@ -52,14 +52,14 @@ To add a new robot to the server, make a new ChucK class, be sure to include the
         "/NewBot" => string address;
         IDCheck(ID, address) => int check;
         if (check >= 0) {
-            spork ~ oscrec(check, address);
+            spork ~ oscrecv(check, address);
         }
     }
 
 rescale
 -------
 
-To set the scale of a robot, make an integer array of the desired scale in the class, and call the function "rescale" using that array. This allows for MIDI notes to be interpreted correctly no matter the scale of a robot. 
+To set the scale of a robot, make an integer array of the desired scale in the class and then call the function "rescale" using that array. This allows for MIDI/OSC notes to be interpreted correctly no matter the scale of a robot, and also restricts allowed messages to those in the array (making it good to include on every robot). 
 
     public class WholeToneBot extends SerialBot {
         // OldBot is 0
@@ -76,7 +76,7 @@ To set the scale of a robot, make an integer array of the desired scale in the c
         "/WholeToneBot" => string address;
         IDCheck(ID, address) => int check;
         if (check >= 0) {
-            spork ~ oscrec(check, address);
+            spork ~ oscrecv(check, address);
         }
     }
 

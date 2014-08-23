@@ -16,23 +16,28 @@ public class SerialBot {
 
     // for optional rescaling
     int scale[64];
-    for (int i ; i < scale.cap(); i++) {
+    for (int i; i < scale.cap(); i++) {
         i => scale[i];
     }
 
-    fun void rescale(int[] collection) {
+    fun void rescale(int collection[]) {
         // reassigns incoming MIDI notes to their proper robot note
         for (int i; i < collection.cap(); i++) {
             collection[i] => scale[i];
         }
     }
 
-    fun int renote(note) {
-        // scale reassignment
+    fun int renote(int note) {
+        // scale reassignment, also checks if message is a valid note
+        int pass;
         for (int i; i < scale.cap(); i++) {
             if (note == scale[i]) {
                 i => note;
+                1 => pass;
             }
+        }
+        if (pass != 1) {
+            -1 => note;
         }
         return note;
     }
@@ -59,8 +64,13 @@ public class SerialBot {
             oin => now;
             while (oin.recv(msg)) {
                 if (msg.address == address) {
-                    talk.talk.note(port, renote(msg.getInt(0)), msg.getInt(1));
-                    <<< msg.address, renote(msg.getInt(0)), msg.getInt(1) >>>;
+                    renote(msg.getInt(0)) => int note;
+                    if (note >= 0) {
+                        talk.talk.note(port, note, msg.getInt(1));
+                    }
+                    else {
+                        <<< note, "is not an accepted note number.", "" >>>;
+                    }
                 }
             }
         }
