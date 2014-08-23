@@ -68,6 +68,9 @@ public class SerialBot {
                     if (note >= 0) {
                         talk.talk.note(port, note, msg.getInt(1));
                     }
+                    else {
+                        <<< note, "is not an accepted note number.", "" >>>;
+                    }
                 }
             }
         }
