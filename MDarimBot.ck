@@ -8,13 +8,13 @@ public class MDarimBot extends SerialBot {
     // Trimpspin is 2
     
     // MIDI notes
-    [33,35,36,38,40,41,42,43
-     45,47,48,50,52,53,54,55
-     57,59,60,62,64,65,66,67
-     69,71,72,74,76,77,78,79
-     81,83] @=> int scale;
+    [33,35,36,38,40,41,42,43,
+     45,47,48,50,52,53,54,55,
+     57,59,60,62,64,65,66,67,
+     69,71,72,74,76,77,78,79,
+     81,83] @=> int scl[];
 
-    rescale(scale);
+    rescale(scl);
 
     0 => int ID;
     "/MDarimBot" => string address;
