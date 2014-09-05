@@ -67,10 +67,10 @@ To set the scale of a robot, make an integer array of the desired scale in the c
         // WholeToneBot is 2 
 
         // create MIDI scale here, whole notes starting at C
-        [60, 62, 64, 66, 68, 70, 72] @=> int scale;
+        [60, 62, 64, 66, 68, 70, 72] @=> int scl[];
 
         // call rescale here
-        rescale(scale);
+        rescale(scl);
 
         2 => int ID;
         "/WholeToneBot" => string address;
