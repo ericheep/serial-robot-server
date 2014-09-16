@@ -8,10 +8,10 @@ public class Trimpbeat extends SerialBot {
     // Trimpspin is 2
 
     // MIDI notes
-    [60,61,62,63,64,65,66,67,68,69
-     70,71,72,73,74,75,76,77,78,79] @=> int scale;
+    [60,61,62,63,64,65,66,67,68,69,
+     70,71,72,73,74,75,76,77,78,79] @=> int scl[];
 
-    rescale(scale);
+    rescale(scl);
 
     1 => int ID;
     "/Trimpbeat" => string address;

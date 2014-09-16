@@ -9,13 +9,13 @@ public class MDarimBot extends SerialBot {
     
     // MIDI notes
     // 76 currently missing
-    [45,47,48,50,52,53,54,55
-     57,59,60,62,64,65,66,67
-     69,71,72,74,76,77,78,79
-     81,83,84,86,88,89,90,91
-     93,95,96] @=> int scale;
+    [45,47,48,50,52,53,54,55,
+     57,59,60,62,64,65,66,67,
+     69,71,72,74,76,77,78,79,
+     81,83,84,86,88,89,90,91,
+     93,95,96] @=> int scl[];
 
-    rescale(scale);
+    rescale(scl);
 
     0 => int ID;
     "/MDarimBot" => string address;
