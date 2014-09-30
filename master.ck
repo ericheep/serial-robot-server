@@ -18,4 +18,4 @@ Machine.add(me.dir() + "/main.ck");
 <<< "-", "" >>>;
 
 // osc test
-//Machine.add(me.dir() + "/local_tester.ck");
+// Machine.add(me.dir() + "/local_tester.ck");
