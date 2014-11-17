@@ -32,9 +32,9 @@ To connect using ChucK via OSC:
 
 Then to send to a robot using its OSC address, addresses should be kept the same as the robot names (MDarimBot, "/MDarimBot"):
 
-    oout.start("/Address")
-    oout.add(note)
-    oout.add(velocity)
+    oout.start("/Address");
+    oout.add(note);
+    oout.add(velocity);
     oout.send();
 
 To connect using MIDI, see the [midi-robot-client](https://github.com/MTIID/midi-robot-client) repo.
